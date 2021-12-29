@@ -28,6 +28,7 @@ const Navbar = () => {
                 <ShoppingCartIcon />
                 {state}
             </Link>
+            
         </Toolbar>
     )
 }
