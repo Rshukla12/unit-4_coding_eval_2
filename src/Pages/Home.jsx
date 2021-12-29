@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import { useEffect } from "react";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { fetchProucts } from "../utils/Api";
+import { fetchProucts } from "../utils/api";
 
 const Home = () => {
     const { isLoading, products, isError } = useSelector(state=>state.shop, shallowEqual);

@@ -7,6 +7,7 @@ const initState = {
 }
 
 const shopReducer = ( state=initState, action ) => {
+    console.log(action)
     switch( action.type ){
         case ( constants.GET_PRODUCT_REQUEST ): {
             return {
