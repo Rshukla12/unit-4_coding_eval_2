@@ -1,13 +1,15 @@
 import { Route, Switch } from "react-router-dom";
+import Home from "../Pages/Home";
 
 const AllRoutes = () => {
-    <Switch>
-        <Route exact path="/">
-        </Route>
-        <Route exact path="/">
-        </Route>
-        <Route exact path="/">
-        </Route>
-    </Switch>
+    return (
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route exact path="/">
+            </Route>
+        </Switch>
+    )
 }
 export default AllRoutes;
