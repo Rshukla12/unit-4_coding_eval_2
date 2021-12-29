@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../Redux/Cart/action";
+import { addProduct, changeProductQty, removeProduct } from "../Redux/Cart/action";
 
 
 
@@ -10,13 +10,24 @@ const Products = ({ details, qty=0 }) => {
     const [state, setState] = useState(qty);
     const dispatch = useDispatch();
 
+
+    useEffect(()=> {
+        state === 0 && dispatch(removeProduct({
+            ...details
+        }))
+    }, [state])
     const handleAddProduct = () => {
-        if ( state > 0 ){
+        if ( state > 0 && qty === 0 ){
             dispatch(addProduct({
                 ...details,
                 qty: state
-            }
-            ))
+            }))
+        }
+        else if ( state > 0 ){
+            dispatch(changeProductQty({
+                ...details,
+                qty: state
+            }))
         }
 
     } 

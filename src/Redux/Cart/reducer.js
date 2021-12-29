@@ -27,11 +27,10 @@ export const cartReducer = ( state=initState, action ) => {
             }
         }
         
-        
         case ( constants.CHANGE_QTY_PRODUCT ): {
             const cart = state.cart.map(item => {
                 if ( item.id === action.payload.item.id ){
-                    item.qty = action.payload.qty
+                    item.qty = action.payload.item.qty
                 }
                 return item;
             })
